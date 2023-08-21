@@ -1,0 +1,32 @@
+.chats{
+    position: absolute;
+    bottom: 10px;
+    min-width: 60%;
+    display: flex;
+    gap: 10px;
+}
+.chat__header__dark{
+    height: 50px;
+    align-items: center;
+    background: rgba(31, 30, 30, 0.27);
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 1px 1px rgba(229, 229, 218, 0.09);
+    gap: 20px;
+}
+.chat__header__light{
+    gap: 20px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 1px 1px rgba(229, 229, 218, 0.56);
+}
+.messages__inner{
+    padding-bottom: 100px;
+    overflow-x: scroll;
+    height: 90vh;
+}
+.messages__inner::-webkit-scrollbar {
+    width: 0;
+}

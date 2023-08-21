@@ -4,12 +4,12 @@ import {message} from "antd";
 import rootStore from "../rootStore/instanse.ts";
 
 
-type userType = {
+export type userType = {
     _id: string | null
     email: string | null
     username: string | null
     avaimg: string | null
-    online: boolean | null
+    online: boolean
 
 }
 export type loginType = {
@@ -18,7 +18,7 @@ export type loginType = {
 }
 
 type UserStoreType = {
-    user: userType
+    user: userType,
 }
 
 type privateField = "_UserStore"
@@ -30,8 +30,8 @@ export default class UserStore {
             email: null,
             username: null,
             avaimg: null,
-            online: null
-        },
+            online: false
+        }
     }
 
     constructor() {

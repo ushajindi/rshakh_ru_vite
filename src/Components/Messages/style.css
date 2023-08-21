@@ -1,0 +1,9 @@
+.messages__date{
+    font-size: 10px;
+    color: #262626;
+    text-align: right;
+    padding-top: 10px;
+}
+.messages__date.nome{
+color: rgba(213, 208, 205, 0.89);
+}

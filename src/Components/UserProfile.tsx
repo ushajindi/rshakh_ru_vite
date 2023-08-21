@@ -64,7 +64,9 @@ const UserProfile = () => {
                                     <Button className={theme.theme==="dark"?"bg-dark-primary text-dark-secondary border-dark-secondary":"text-black"}  type="primary" htmlType="submit">
                                         Изменить
                                     </Button>
-                                    <Button className={theme.theme==="dark"?"bg-dark-primary text-danger-primary border-dark-secondary":"text-danger-primary"} type="primary">
+                                    <Button onClick={()=>{
+                                        rootStore.AuthStore.signOut()
+                                    }} className={theme.theme==="dark"?"bg-dark-primary text-danger-primary border-dark-secondary":"text-danger-primary"} type="primary">
                                         Выход
                                     </Button>
                                 </Row>

@@ -1,4 +1,5 @@
 import api from "./api.ts";
+import {userType} from "../store/UserStore/UserStore.ts";
 
 const token = localStorage.getItem("token")
 
@@ -25,6 +26,10 @@ export default class SignApi {
 
     }
 
+    static signIn(user:any){
+        return  api.post("/auth/registration",user)
+    }
+
     static autoRun() {
         if (token) {
             return  api.get("/users/profile", {
@@ -34,5 +39,16 @@ export default class SignApi {
             })
         }
 
+    }
+    static createChat(users:userType[]){
+        return api.post("/chat/create",users,{
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+    }
+
+    static findEmail(email:string){
+        return api.get(`users/user/findemail/${email}`)
     }
 }

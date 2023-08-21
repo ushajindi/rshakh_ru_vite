@@ -7,6 +7,8 @@ import rootStore from "./store/rootStore/instanse.ts";
 import {useNavigate} from "react-router-dom";
 import Chats from "./pages/Chats/Chats.tsx";
 import "./App.css"
+import Users from "./pages/Users/Users.tsx";
+import {observer} from "mobx-react-lite";
 
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
        if (!rootStore.AuthStore.Auth.Auth){
            navigateLogin()
        }
-   },[])
+   },[rootStore.AuthStore.Auth.Auth])
     const navigateLogin=()=>{
         navigate("/login")
     }
@@ -26,11 +28,12 @@ function App() {
             <Routes>
                 <Route  path={"/login"} element={<Login/>}/>
                 <Route path={"/"} element={<General/>}>
-                    <Route path={"/user"} element={<UserProfile/>}/>
-                    <Route path={"/chats/:id"} element={<Chats/>}/>
+                    <Route path={"/me"} element={<UserProfile/>}/>
+                    <Route path={"/chats/:id"} element={<Chats/>}/>\
+                    <Route path={"/users"} element={<Users/>}/>
                 </Route>
             </Routes>
   )
 }
 
-export default App
+export default observer(App)
